@@ -1,36 +1,42 @@
-// Leonida Trophy Guide — entrypoint for gta6-trophy-guide-01 (Node 22, standard library only).
+// Leonida Trophy Guide — the program that hands the guide in (Node 22, standard library only).
 //
-// The guide itself is the app/ folder: plain static files (index.html, app.js, style.css and
-// data/trophies.json) that a browser opens directly, with no build step and no network use.
-// This program hands it in: it copies app/ and screenshots/ from beside this file into the
-// output directory and writes output/dossier.json, the summary the judge reads (the
-// screenshots, the first load's files and bytes, and the source), using the vendored make.fun
-// library. vendor/makefun-frontend.ts is left exactly as the kit shipped it: the scorer
-// requires dossier.json to be byte for byte what that library writes.
+// The guide lives in app/: index.html, app.js, style.css and data/trophies.json, plain static
+// files that open in a browser with no build step and load nothing over the network. The
+// screenshots of it live in screenshots/. This program copies both folders to the output
+// directory and writes dossier.json there with the vendored make.fun library, which is the
+// summary the judge reads (screenshots, first-load files and bytes, and the source).
 //
-// Serve the guide locally with `node serve.ts`, then open http://localhost:8080.
-// Outside the grader's container, MAKEFUN_OUTPUT_DIR stands in for /output:
+// vendor/makefun-frontend.ts is the kit's copy and must stay unchanged: the scorer rebuilds
+// dossier.json with its own copy and compares the two byte for byte.
+//
+// Run it locally with:
 //   mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
+// Serve the guide locally with `node serve.ts` (http://localhost:8080).
 
 import { cpSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildDossier } from './vendor/makefun-frontend.ts';
 
-// Resolve the repository root (this file's folder) and the output folder.
-const here = fileURLToPath(new URL('.', import.meta.url));
-const out = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
+const repoRoot = fileURLToPath(new URL('.', import.meta.url));
+const outputDir = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 
-// Stage the guide and its screenshots, then write the dossier from them.
-mkdirSync(out, { recursive: true });
-cpSync(join(here, 'app'), join(out, 'app'), { recursive: true });
-mkdirSync(join(out, 'screenshots'), { recursive: true });
-if (existsSync(join(here, 'screenshots'))) cpSync(join(here, 'screenshots'), join(out, 'screenshots'), { recursive: true });
+mkdirSync(outputDir, { recursive: true });
+cpSync(join(repoRoot, 'app'), join(outputDir, 'app'), { recursive: true });
+mkdirSync(join(outputDir, 'screenshots'), { recursive: true });
+if (existsSync(join(repoRoot, 'screenshots'))) {
+  cpSync(join(repoRoot, 'screenshots'), join(outputDir, 'screenshots'), { recursive: true });
+}
 
-// The scorer's own caps: only text_max_bytes shapes the bytes; the rest refuse an entry the
-// scorer would refuse (more than 4 screenshots or one over 256 KiB; more than 993 files and
-// directories in app/ or 48 MiB of app files).
+// The scorer's own caps (reference/gate.json): only text_max_bytes shapes the bytes; the
+// others refuse an entry the scorer would refuse (more than 4 screenshots or one over
+// 256 KiB; more than 993 files and directories in app/ or 48 MiB of app files).
 writeFileSync(
-  join(out, 'dossier.json'),
-  buildDossier(out, { text_max_bytes: 163840, screenshots: { max: 4, max_bytes: 262144 }, app_max_files: 993, app_max_bytes: 50331648 }),
+  join(outputDir, 'dossier.json'),
+  buildDossier(outputDir, {
+    text_max_bytes: 163840,
+    screenshots: { max: 4, max_bytes: 262144 },
+    app_max_files: 993,
+    app_max_bytes: 50331648,
+  }),
 );
