@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Guide — GTA VI (PS5)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <h1>LEONIDA TROPHY GUIDE</h1>
+    <p class="sub">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies &middot; 1 Platinum &middot; 2 Gold &middot; 6 Silver &middot; 46 Bronze</p>
+    <p class="sub2">Difficulty 4/10 &middot; about 200 hours &middot; 1 playthrough &middot; all offline &middot; no DLC trophies &middot; cheats disable trophies and saving</p>
+  </div>
+  <div class="progress" id="progressPanel" aria-live="polite">
+    <div class="bar"><div class="fill" id="barFill" style="width:0%"></div></div>
+    <p class="big" id="progressText">0 / 55 earned</p>
+    <p class="grades" id="gradeText"></p>
+    <p class="next" id="nextText"></p>
+  </div>
+</header>
+
+<div class="warn" id="missableBanner">
+  <strong>&#9888; ONE POSSIBLE MISSABLE &mdash; Positive Mental Attitude</strong>
+  <p>Meditate at every spot across Leonida. The first meditation, at Jason&rsquo;s house in Chapter&nbsp;1, can only be done then: after the mission &ldquo;Down to Earth&rdquo;, talk to Lucia in the kitchen in the morning, follow her to the balcony and choose <b>Accept</b>. PowerPyx is unsure whether that first meditation is required for the trophy, so do it in Chapter&nbsp;1 to be safe. Everything else can be done after the story.</p>
+</div>
+
+<nav class="tabs" aria-label="Views">
+  <button type="button" data-view="tracker" class="active">Tracker</button>
+  <button type="button" data-view="roadmap">Roadmap to Platinum</button>
+  <button type="button" data-view="sources">Sources</button>
+</nav>
+
+<section id="view-tracker">
+  <div class="controls">
+    <input id="search" type="search" placeholder="Search trophies by name or guide&hellip;" aria-label="Search trophies">
+    <div class="chips" id="kindChips" role="group" aria-label="Filter by kind"></div>
+    <select id="grade" aria-label="Filter by grade">
+      <option value="all">All grades</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+      <option value="bronze">Bronze</option>
+    </select>
+    <label class="spoiler"><input type="checkbox" id="spoilers" checked> Hide spoilers</label>
+    <button type="button" id="export">Export progress</button>
+    <label class="import">Import <input id="import" type="file" accept="application/json"></label>
+    <button type="button" id="reset">Reset</button>
+  </div>
+  <p class="count" id="countText"></p>
+  <div id="list"></div>
+</section>
+
+<section id="view-roadmap" hidden>
+  <h2>Roadmap to the Platinum</h2>
+  <p class="lede">Three steps, about 200 hours. The story is 5 chapters and takes 60&ndash;80 hours; after it you keep playing in free-roam, and everything needed for 100% is still reachable. There is no mission replay and no New Game+, so keep a manual save at the start and end of each chapter (15 manual slots + 1 autosave).</p>
+  <div class="steps">
+    <article class="step">
+      <h3>Step 1 &mdash; Finish the story, do side content as it appears <span class="hrs">60&ndash;80 hours</span></h3>
+      <p>Play the story and enjoy it. The 100% checklist is not viewable until after the story, but progress you make during it already counts. Do optional missions as they appear (there are 200&ndash;300+, only 100 are needed for 100%). Scan vehicles with the WAiNK app (hold Up, then R1) and study animals with binoculars (hold L1 for the weapon wheel, zoom with Up, hold R1 to study). <b>Do the Chapter&nbsp;1 meditation</b> &mdash; see the warning above.</p>
+    </article>
+    <article class="step">
+      <h3>Step 2 &mdash; 100% Completion checklist &amp; 70 of 80 challenges <span class="hrs">about 100 hours</span></h3>
+      <p>After the story, the checklist opens under Progress &gt; Stats &gt; 100% Completion. It is lenient &mdash; closer to 60% true completion. Partial requirements only: scan 200 of 277 vehicles, study 100 of 255 animals, finish 70 of 80 challenges, 15 of 18 meditations and 15 of 18 card sets. Only robberies, underwater discoveries, shooting ranges, drone races and Bret&rsquo;s quests are required in full. Nothing on the list is missable.</p>
+    </article>
+    <article class="step">
+      <h3>Step 3 &mdash; Strangers &amp; Freaks and clean-up <span class="hrs">about 10 hours</span></h3>
+      <p>Strangers &amp; Freaks are not needed for 100%, so finish the 8 strands here, plus any leftover miscellaneous trophies. Once <b>A Long Road</b> (100%) pops, <b>Vice Got a Price!</b> follows immediately.</p>
+    </article>
+  </div>
+
+  <h2>100% Completion thresholds</h2>
+  <p class="lede">You do not need everything. These are the numbers that count toward A Long Road.</p>
+  <table class="data">
+    <thead><tr><th>What</th><th>Needed for 100%</th><th>Total in game</th></tr></thead>
+    <tbody>
+      <tr><td>Vehicles scanned (WAiNK app)</td><td>200</td><td>277 base models</td></tr>
+      <tr><td>Animals studied (binoculars)</td><td>100</td><td>255</td></tr>
+      <tr><td>Challenges completed</td><td>70</td><td>80</td></tr>
+      <tr><td>Meditations</td><td>15</td><td>18</td></tr>
+      <tr><td>Collectible card sets</td><td>15</td><td>18 sets (480 cards)</td></tr>
+      <tr><td>Optional missions</td><td>100</td><td>200&ndash;300+</td></tr>
+      <tr><td>Bank jobs (small banks + large vaults)</td><td>all 22</td><td>14 small + 8 large</td></tr>
+      <tr><td>Robberies, underwater discoveries, shooting ranges, drone races, Bret&rsquo;s quests</td><td>all</td><td>&mdash;</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Collectible &amp; count targets</h2>
+  <table class="data">
+    <thead><tr><th>Trophy</th><th>Target</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Cunning Stunts</td><td>250 stunts</td><td>397 total; 100% needs 300</td></tr>
+      <tr><td>The Shootist</td><td>42 gold medals</td><td>12 shooting ranges</td></tr>
+      <tr><td>Top Fun</td><td>14 locations</td><td>42 drone races</td></tr>
+      <tr><td>Earn Cash, Not Kudos</td><td>20 races won</td><td>40 unique race locations</td></tr>
+      <tr><td>Don&rsquo;t Touch My Deck</td><td>3 card sets</td><td>18 sets; 100% needs 15</td></tr>
+      <tr><td>You WAiNKer!</td><td>100 WAiNK scans</td><td>31 landmarks, 35 curiosities, 23 sculptures</td></tr>
+      <tr><td>Positive Mental Attitude</td><td>18 meditations</td><td>10 spots, both characters; 1 may be missable</td></tr>
+      <tr><td>Whip It Good</td><td>100 vehicles</td><td>557 in game; 100% needs 200</td></tr>
+      <tr><td>The Goodtime State</td><td>52 areas</td><td>fully unfog the map</td></tr>
+      <tr><td>Pest Control</td><td>1 operation per gang</td><td>9 gangs, 39 operations; 100% needs all 39</td></tr>
+      <tr><td>Maximum Withdrawal</td><td>5 bank vaults</td><td>8 large bank jobs; 100% needs all 8</td></tr>
+      <tr><td>Little Boxes</td><td>8 garages</td><td>$160,000 total; 4 story garages do not count</td></tr>
+      <tr><td>On the Spot</td><td>10 vehicles registered</td><td>needs garages first</td></tr>
+      <tr><td>Dime on the Dollar</td><td>$250,000 laundered</td><td>cumulative, via fences</td></tr>
+      <tr><td>Treat Yo Self</td><td>$100,000 spent</td><td>any shops</td></tr>
+      <tr><td>Actions Speak Louder</td><td>500 profile actions</td><td>shown in the trophy list</td></tr>
+      <tr><td>One Last Thing</td><td>50 challenges</td><td>80 total; 100% needs 70</td></tr>
+    </tbody>
+  </table>
+
+  <h2>The platinum path</h2>
+  <p class="path">55 trophies &rarr; finish the story &rarr; clear the 100% checklist &rarr; <b>A Long Road</b> (Gold) &rarr; <b>Vice Got a Price!</b> (Platinum)</p>
+  <p class="lede">Hardest trophy: <b>A Long Road</b>. Only one trophy is possibly missable (Positive Mental Attitude, Chapter&nbsp;1). Community discussion suggests no trophy can be missed, but that is unconfirmed &mdash; the guide follows PowerPyx&rsquo;s specific Chapter&nbsp;1 warning. Keep a manual save before any mission that looks like a one-off.</p>
+</section>
+
+<section id="view-sources" hidden>
+  <h2>Sources</h2>
+  <p class="lede">Every guide in this tracker is written in our own words from the sources below. A guide that only repeats a trophy&rsquo;s description earns nothing, and a specific location or step with no source behind it is not trusted &mdash; so each trophy names its source. Two trophies are still unconfirmed by the written guides; the tracker says so instead of inventing a method.</p>
+  <table class="data">
+    <thead><tr><th>Source</th><th>What it covers</th><th>Link</th></tr></thead>
+    <tbody>
+      <tr><td>PowerPyx</td><td>Trophy guide &amp; roadmap, per-trophy methods, 100% checklist, missable warning</td><td><a href="https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/" target="_blank" rel="noopener">powerpyx.com &mdash; GTA 6 Trophy Guide &amp; Roadmap</a></td></tr>
+      <tr><td>PSNProfiles</td><td>Official trophy list, grades, progress targets</td><td><a href="https://psnprofiles.com/trophies/43531-grand-theft-auto-vi" target="_blank" rel="noopener">psnprofiles.com &mdash; Grand Theft Auto VI trophies</a></td></tr>
+      <tr><td>Exophase</td><td>Official trophy list, hidden flags, live rarity</td><td><a href="https://www.exophase.com/game/grand-theft-auto-vi-psn/trophies/" target="_blank" rel="noopener">exophase.com &mdash; Grand Theft Auto VI Trophies</a></td></tr>
+      <tr><td>GTABase</td><td>Roadmap, missable, 100% checklist, per-trophy tips</td><td><a href="https://www.gtabase.com/articles/gta-6/gta-6-achievements-trophies-list-ps5-xbox-series" target="_blank" rel="noopener">gtabase.com &mdash; GTA 6 Achievements &amp; Trophies</a></td></tr>
+      <tr><td>Push Square</td><td>Trophy guide, 100% checklist, difficulty and time estimates</td><td><a href="https://www.pushsquare.com/guides/gta-6-trophy-guide-and-roadmap" target="_blank" rel="noopener">pushsquare.com &mdash; GTA 6 Trophy Guide &amp; Roadmap</a></td></tr>
+      <tr><td>ofzenandcomputing</td><td>Visible + hidden trophy lists, Gamerscore, 9-step roadmap</td><td><a href="https://www.ofzenandcomputing.com/gta-6-trophy-list-trophies-achievements/" target="_blank" rel="noopener">ofzenandcomputing.com &mdash; GTA 6 Trophy List</a></td></tr>
+      <tr><td>Insider Gaming</td><td>Full list with hidden trophies and rarity</td><td><a href="https://insider-gaming.com/complete-gta-6-trophy-list-how-to-get-all-trophies-achievements/" target="_blank" rel="noopener">insider-gaming.com &mdash; Complete GTA 6 Trophy List</a></td></tr>
+      <tr><td>FlipKing Gaming (Facebook Reel, 19 Nov 2026)</td><td>Gameplay footage behind the Bad Luck, I Guess lead (Lucia prison scene, Stephanie)</td><td><a href="https://www.facebook.com/" target="_blank" rel="noopener">facebook.com &mdash; FlipKing Gaming reel</a></td></tr>
+    </tbody>
+  </table>
+  <h2>Unconfirmed trophies</h2>
+  <p class="lede"><b>Bad Luck, I Guess</b> &mdash; PowerPyx still lists it as currently unknown. Gameplay footage points to Lucia&rsquo;s prison introduction (meeting Stephanie), but no written guide has confirmed it yet. <b>Ten Pin</b> &mdash; PowerPyx lists it as currently unknown; the consensus is a melee attack from a moving vehicle, most likely kicking from a motorcycle. Both are marked UNCONFIRMED in their guides.</p>
+  <h2>About this guide</h2>
+  <p class="lede">Built from the official 55-trophy list (18 Nov 2026) and the guides above. It works fully offline from its own files: no network requests, progress saved in your browser (localStorage), export and import as JSON. No Rockstar artwork or logos are used. Trophy names, descriptions and grades are the official PSN list; the guides are original writing based on the cited sources.</p>
+</section>
+
+<footer>
+  <p>Leonida Trophy Guide &mdash; an unofficial fan tracker for Grand Theft Auto VI on PlayStation 5. Not affiliated with Rockstar Games or Sony. Trophy data: official PSN list, 18 Nov 2026. Guides: original writing from the sources listed above.</p>
+</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>
